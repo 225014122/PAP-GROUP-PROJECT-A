@@ -4,7 +4,7 @@
 #include "employees.h"
 #include "budget.h"
 #include "suppliers.h"
-#include "asset.h"
+#include "assets.h"
 
 void clearInputBuffer(void)
 {
@@ -43,14 +43,10 @@ void employeeReport(void)
         totalSalary += salary;
 
         if(salary > highestSalary)
-        {
             highestSalary = salary;
-        }
 
         if(salary < lowestSalary)
-        {
             lowestSalary = salary;
-        }
     }
 
     printf("\n========================================\n");
@@ -58,13 +54,10 @@ void employeeReport(void)
     printf("========================================\n");
 
     printf("Total Employees : %d\n", employeeCount);
-
     printf("Average Salary  : N$%.2f\n",
            totalSalary / employeeCount);
-
     printf("Highest Salary  : N$%.2f\n",
            highestSalary);
-
     printf("Lowest Salary   : N$%.2f\n",
            lowestSalary);
 }
@@ -95,93 +88,28 @@ void budgetReport(void)
 
     printf("Total Remaining Budget : N$%.2f\n",
            totalRemaining);
-
-    printf("\nDepartments Over Budget:\n");
-
-    int found = 0;
-
-    for(int i = 0; i < numberOfDepartments; i++)
-    {
-        if(expenditure[i] > allocatedBudget[i])
-        {
-            printf("- %s\n", department[i]);
-            found = 1;
-        }
-    }
-
-    if(found == 0)
-    {
-        printf("None\n");
-    }
 }
 
 /* Supplier Report */
 void supplierReport(void)
 {
-    if(supplierCount == 0)
-    {
-        printf("\nNo suppliers available.\n");
-        return;
-    }
-
     printf("\n========================================\n");
-    printf("           SUPPLIER REPORT\n");
+    printf("          SUPPLIER REPORT\n");
     printf("========================================\n");
 
-    for(int i = 0; i < supplierCount; i++)
-    {
-        printf("\nSupplier %d\n", i + 1);
-
-        printf("Supplier ID : %d\n",
-               suppliers[i].supplierID);
-
-        printf("Name        : %s\n",
-               suppliers[i].name);
-
-        printf("Email       : %s\n",
-               suppliers[i].email);
-
-        printf("Telephone   : %s\n",
-               suppliers[i].telephone);
-
-        printf("Location    : %s\n",
-               suppliers[i].location);
-    }
+    printf("Supplier records are managed in the\n");
+    printf("Supplier Management module.\n");
 }
 
 /* Asset Report */
 void assetReport(void)
 {
-    if(assetCount == 0)
-    {
-        printf("\nNo assets available.\n");
-        return;
-    }
-
     printf("\n========================================\n");
-    printf("             ASSET REPORT\n");
+    printf("            ASSET REPORT\n");
     printf("========================================\n");
 
-    for(int i = 0; i < assetCount; i++)
-    {
-        printf("\nAsset ID       : %s\n",
-               assets[i].assetID);
-
-        printf("Asset Name     : %s\n",
-               assets[i].assetName);
-
-        printf("Asset Type     : %s\n",
-               assets[i].assetType);
-
-        printf("Purchase Value : N$%.2lf\n",
-               assets[i].purchaseValue);
-
-        printf("Department     : %s\n",
-               assets[i].department);
-
-        printf("Condition      : %s\n",
-               assets[i].condition);
-    }
+    printf("Asset records are managed in the\n");
+    printf("Asset Management module.\n");
 }
 
 /* Reports Menu */
@@ -192,7 +120,7 @@ void reportsMenu(void)
     do
     {
         printf("\n========================================\n");
-        printf("             REPORTS MENU\n");
+        printf("            REPORTS MENU\n");
         printf("========================================\n");
         printf("1. Employee Report\n");
         printf("2. Budget Report\n");
@@ -201,7 +129,6 @@ void reportsMenu(void)
         printf("5. Back\n");
 
         printf("Enter choice: ");
-
         scanf("%d", &choice);
         clearInputBuffer();
 
