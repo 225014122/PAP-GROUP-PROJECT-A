@@ -112,3 +112,13 @@ void searchSupplier(void)
         printf("Supplier not found.\n");
     }
 }
+
+void displaySupplierMenu() {
+    printf("\n--Supplier Mnagement ---\n");
+    printf("1. Add Supplier\n");
+    printf("2. Display Suppliers\n");
+    printf("3. Search Supplier\n");
+    printf("4. Exit\n");
+    printf("Enter choice: ");
+}
+    
