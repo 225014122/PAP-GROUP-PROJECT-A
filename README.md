@@ -1,6 +1,29 @@
 # MUNICIPAL FINANCIAL MANAGEMENT SYSTEM (MFMS)
 **Group Project A**
 
+## Group number 
+
+---
+
+## Project Description
+
+The Municipal Financial Management System (MFMS) is a menu-driven C application developed for PAP521S – Programming in Practice. The system provides a foundation version of a municipal information system, allowing municipal staff to manage employee records, department budgets, suppliers, and municipal assets, and to generate basic reports across all four areas.
+
+---
+
+## System Features
+- **Employee Management** — add, display, search employees, and calculate salaries
+  (basic salary + housing + transport allowance).
+- **Budget Management** — capture departmental budgets and expenditure, calculate
+  remaining budget, and flag departments that have exceeded their allocation.
+- **Supplier Management** — add, display, and search registered suppliers.
+- **Asset Management** — add, display, and search municipal assets, with data
+  persisted to `assets.txt` between sessions.
+- **Reports** — generate summary reports across employees, budgets, suppliers,
+  and assets.
+- **Input Validation** — rejects negative salaries/budgets, empty names, and
+  invalid menu selections throughout the system.
+
 ---
 
 ## 👥 Group Members & Credentials
@@ -24,14 +47,21 @@ To compile the modular system locally using GCC C99:
 
 ```bash
 gcc -Wall -Wextra -std=c99 main.c budget.c assets.c employees.c suppliers.c reports.c -o mfms_system
----
+
+## ▶️ How to Run 
+1. Compile the system using the command above.
+2. Run the compiled program:
+     -Windows: .\mfms_system.exe
+     -macOS/Linux: ./mfms_system
+3. Use the on-screen menu (options 1–6) to navigate between modules.
+4. Select option 6 at any time to exit the system.
 
 # Part 7: System Testing & Quality Assurance
 
 ## 7.1 Testing Methodology
 To ensure system stability, modular integrity, and reliable user interactions, a comprehensive multi-tier testing approach was conducted on the **Municipal Financial Management System (MFMS)**. Testing was executed locally using the GCC C99 compiler within Visual Studio Code.
 
-1. **Compilation & Linkage Testing:** Verification that all 12 source files compile cleanly without missing headers or linkage errors.
+1. **Compilation & Linkage Testing:** Verification that all source files compile cleanly without missing headers or linkage errors.
 2. **Functional Menu & Routing Testing:** Verification that top-level menu selections execute their corresponding module routines.
 3. **Input Validation & Exception Handling:** Testing system behavior against unexpected user entries (e.g., non-numeric input, out-of-bounds options) to prevent crashes.
 
