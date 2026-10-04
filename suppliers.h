@@ -17,5 +17,6 @@ typedef struct
 void addSupplier(void);
 void displaySuppliers(void);
 void searchSupplier(void);
+void displaySupplierMenu();
 
 #endif
