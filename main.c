@@ -24,11 +24,11 @@ int main(void) {
         }
 
         switch (choice) {
-            case 1: displayEmployeeMenu(); break;
-            case 2: displayBudgetMenu(); break;
+            case 1: employeeMenu(); break;
+            case 2: budgetManagement(); break;
             case 3: displaySupplierMenu(); break;
-            case 4: displayAssetMenu(); break;
-            case 5: displayReportsMenu(); break;
+            case 4: assetMenu(); break;
+            case 5: reportsMenu(); break;
             case 6: printf("Exiting system...\n"); break;
             default: printf("Invalid choice. Try again.\n"); break;
         }

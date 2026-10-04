@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "asset_management.h"
+#include "assets.h"
 
 struct Asset assets[MAX_ASSETS];
 int assetCount = 0;
@@ -319,41 +319,3 @@ void assetMenu(void)
 
     } while (choice != 4);
 }
-
-int main(void)
-{
-    int choice;
-
-    loadAssets();
-
-    do
-    {
-        printf("\n==========================================\n");
-        printf(" MUNICIPAL FINANCIAL MANAGEMENT SYSTEM\n");
-        printf("==========================================\n");
-        printf("1. Asset Management\n");
-        printf("2. Exit\n");
-        printf("==========================================\n");
-
-        choice = readInt("Enter your choice: ");
-
-        switch (choice)
-        {
-            case 1:
-                assetMenu();
-                break;
-
-            case 2:
-                saveAssets();
-                printf("\nThank you for using the system.\n");
-                break;
-
-            default:
-                printf("\nInvalid choice. Please enter 1 or 2.\n");
-        }
-
-    } while (choice != 2);
-
-    return 0;
-}
-
